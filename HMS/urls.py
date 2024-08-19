@@ -20,6 +20,7 @@ from django.urls import path
 from accounts.views import *
 from room.views import *
 from hotel.views import *
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -73,3 +74,5 @@ urlpatterns = [
     path('deleteBooking/<str:pk>/', deleteBooking, name="deleteBooking"),
     path('completeTask/<str:pk>/', completeTask, name="completeTask"),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
